@@ -1,0 +1,11 @@
+.env
+*.zip
+assets/uploads/*
+assets/dokumen_absen/*
+!assets/uploads/.gitkeep
+rapor_jp1_tests/screenshots/
+__pycache__/
+.pytest_cache/
+.vscode/
+Thumbs.db
+.DS_Store
