@@ -1,0 +1,716 @@
+:root {
+    /* Warna utama sistem */
+    --pastel-blue: #AFC6E0;
+    --pastel-blue-2: #BFD3EA;
+    --pastel-blue-3: #D0E0F2;
+
+    --dark-blue: #0d385e;
+    --medium-blue: #2b5d8a;
+    --soft-text-blue: #244b70;
+
+    /* Tombol biru pastel lebih tua */
+    --btn-blue: #6FA7DF;
+    --btn-blue-hover: #5E97D2;
+    --btn-blue-soft: #D8E9FA;
+
+    /* Tombol hijau pastel tua */
+    --btn-green-pastel: #5E9F86;
+    --btn-green-pastel-hover: #518E77;
+
+    /* Tombol cetak biru pastel */
+    --btn-print-pastel: #AECDEE;
+    --btn-print-pastel-hover: #9FC1E7;
+
+    /* Tombol merah pastel */
+    --btn-red-pastel: #E994A5;
+    --btn-red-pastel-hover: #DC8295;
+
+    /* Tombol kuning pastel */
+    --btn-yellow-pastel: #FFD98A;
+    --btn-yellow-pastel-hover: #F4C96D;
+
+    --edit-color: #C98500;
+    --edit-bg: #FFE4A8;
+    --delete-color: #B92C44;
+    --delete-bg: #F2A6B3;
+
+    --bg-content: #f4f7fa;
+    --card-hover: #eef5fc;
+    --shadow-soft: rgba(80, 115, 155, 0.22);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-content);
+}
+
+/* Sidebar kiri cukup warna/gradasi, tanpa bulet-bulet */
+.sidebar {
+    background: linear-gradient(
+        180deg,
+        var(--pastel-blue) 0%,
+        var(--pastel-blue-2) 55%,
+        var(--pastel-blue-3) 100%
+    ) !important;
+    min-height: 100vh;
+    color: var(--dark-blue);
+    box-shadow: 5px 0 20px var(--shadow-soft);
+    width: 280px;
+    flex-shrink: 0;
+}
+
+/* Matikan efek bulet-bulet */
+.sidebar::before,
+.sidebar::after {
+    display: none !important;
+    content: none !important;
+}
+
+.sidebar h5 {
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+.sidebar small {
+    color: var(--soft-text-blue);
+    font-weight: 500;
+}
+
+.sidebar .nav-link {
+    color: var(--dark-blue) !important;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 0 50px 50px 0;
+    transition: 0.3s ease;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.sidebar .nav-link i {
+    width: 18px;
+    text-align: center;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+    padding-left: 25px;
+    box-shadow: 0 6px 14px rgba(80, 115, 155, 0.14);
+}
+
+.sidebar .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.90);
+    color: var(--dark-blue) !important;
+    font-weight: 700;
+    box-shadow: 0 7px 18px rgba(80, 115, 155, 0.18);
+}
+
+.sidebar .text-secondary {
+    color: rgba(13, 56, 94, 0.58) !important;
+}
+
+.btn-logout {
+    border: 2px solid var(--dark-blue);
+    color: var(--dark-blue);
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.30);
+    transition: 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: var(--dark-blue);
+    color: white;
+    transform: none !important;
+    box-shadow: 0 8px 18px rgba(13, 56, 94, 0.18);
+}
+
+/* Navbar atas */
+.main-navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Tombol tambah data semua halaman */
+.btn-add-data,
+.btn-p {
+    background: var(--btn-blue) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    height: 42px;
+    padding: 0 24px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 7px 16px rgba(111, 167, 223, 0.35) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.btn-add-data:hover,
+.btn-p:hover,
+.btn-add-data:focus,
+.btn-p:focus,
+.btn-add-data:active,
+.btn-p:active {
+    background: var(--btn-blue-hover) !important;
+    color: #ffffff !important;
+    transform: none !important;
+    box-shadow: 0 7px 16px rgba(94, 151, 210, 0.35) !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Tombol simpan/update/filter biar tidak ngejreng */
+.btn-save-data,
+.btn-save-data:hover,
+.btn-save-data:focus,
+.btn-save-data:active,
+.btn-save-data:focus-visible {
+    background: var(--btn-blue) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 7px 16px rgba(111, 167, 223, 0.30) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+    outline: none !important;
+}
+
+.btn-update-data {
+    background: #BFD3EA !important;
+    color: var(--dark-blue) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 7px 16px rgba(80, 115, 155, 0.16) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.btn-update-data:hover,
+.btn-update-data:focus,
+.btn-update-data:active {
+    background: #AFC6E0 !important;
+    color: var(--dark-blue) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.btn-filter-data,
+.btn-soft-apply {
+    background: var(--dark-blue) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.btn-filter-data:hover,
+.btn-filter-data:focus,
+.btn-filter-data:active,
+.btn-soft-apply:hover,
+.btn-soft-apply:focus,
+.btn-soft-apply:active {
+    background: #082642 !important;
+    color: white !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Tombol hijau pastel tua: Import Excel, Validasi, UAS */
+.btn-soft-green,
+.btn-soft-green:hover,
+.btn-soft-green:focus,
+.btn-soft-green:active,
+.btn-success,
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+    background: var(--btn-green-pastel) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 12px rgba(94, 159, 134, 0.32) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Tombol cetak/outline pastel biru, tetap ada warna */
+.btn-print-soft,
+.btn-print-soft:hover,
+.btn-print-soft:focus,
+.btn-print-soft:active,
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-info,
+.btn-outline-info:hover,
+.btn-outline-info:focus,
+.btn-outline-info:active {
+    background: var(--btn-print-pastel) !important;
+    color: var(--dark-blue) !important;
+    border: 1px solid #8FB7E2 !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 12px rgba(143, 183, 226, 0.24) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Tombol warning/update bawaan bootstrap jadi kuning pastel */
+.btn-warning,
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active {
+    background: var(--btn-yellow-pastel) !important;
+    color: #7A5200 !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 12px rgba(255, 217, 138, 0.30) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Tombol danger/hapus bawaan bootstrap jadi merah pastel */
+.btn-danger,
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
+    background: var(--btn-red-pastel) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 12px rgba(233, 148, 165, 0.30) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Tombol primary bootstrap tetap biru pastel lebih tua */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background: var(--btn-blue) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 12px rgba(111, 167, 223, 0.30) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Icon aksi tabel: edit & hapus disamain */
+.btn-action {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px !important;
+    border: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    margin: 0 2px;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+    background: transparent;
+}
+
+.btn-action i {
+    font-size: 15px;
+}
+
+.btn-action-edit,
+.btn-action-edit:hover,
+.btn-action-edit:focus,
+.btn-action-edit:active {
+    color: #7A5200 !important;
+    background: var(--btn-yellow-pastel) !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+.btn-action-delete,
+.btn-action-delete:hover,
+.btn-action-delete:focus,
+.btn-action-delete:active {
+    color: #7A1F32 !important;
+    background: var(--btn-red-pastel) !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Card Styling */
+.card-jurusan {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    background: white;
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    height: 100%;
+}
+
+.card-jurusan:hover {
+    transform: translateY(-5px);
+    background-color: var(--card-hover);
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.bg-blue { background-color: #4e73df; }
+.bg-green { background-color: #1cc88a; }
+.bg-cyan { background-color: #36b9cc; }
+.bg-yellow { background-color: #f6c23e; }
+
+.btn-custom {
+    background-color: var(--dark-blue);
+    color: white;
+    border-radius: 20px;
+    padding: 8px 20px;
+}
+
+.btn-custom:hover {
+    background-color: #082642;
+    color: white;
+}
+
+/* Matikan animasi tombol tanpa bikin warna hilang */
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active,
+button,
+button:hover,
+button:focus,
+button:active,
+.btn *,
+.btn:hover *,
+.btn:focus *,
+.btn:active *,
+button *,
+button:hover *,
+button:focus *,
+button:active * {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+/* Sidebar tetap scroll sendiri */
+.sidebar {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Biar scroll bar sidebar halus */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(13, 56, 94, 0.25);
+    border-radius: 50px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(13, 56, 94, 0.38);
+}
+/* =========================
+   STYLE GURU & WALI KELAS
+========================= */
+
+/* Tombol biru pastel */
+.btn-soft-blue {
+    background: #6FA7DF !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 12px rgba(111, 167, 223, 0.28) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.btn-soft-blue:hover,
+.btn-soft-blue:focus,
+.btn-soft-blue:active {
+    background: #5E97D2 !important;
+    color: #ffffff !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Tombol hijau pastel */
+.btn-soft-green {
+    background: #5E9F86 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 12px rgba(94, 159, 134, 0.32) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.btn-soft-green:hover,
+.btn-soft-green:focus,
+.btn-soft-green:active {
+    background: #518E77 !important;
+    color: #ffffff !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Tombol kuning pastel */
+.btn-soft-yellow {
+    background: #FFD98A !important;
+    color: #7A5200 !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 12px rgba(255, 217, 138, 0.30) !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Tombol print biru muda */
+.btn-print-soft {
+    background: #AECDEE !important;
+    color: #0d385e !important;
+    border: 1px solid #9FC1E7 !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Form filter soft */
+.form-filter-soft {
+    height: 42px !important;
+    border-radius: 50px !important;
+    border: 1px solid #dbe5ef !important;
+    background-color: #f8fbff !important;
+    color: #244b70 !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    padding-left: 16px !important;
+    box-shadow: none !important;
+}
+
+/* Card header halaman */
+.page-soft-card {
+    background: #ffffff;
+    border-radius: 18px !important;
+    border-left: 5px solid #6FA7DF !important;
+    box-shadow: 0 4px 16px rgba(80, 115, 155, 0.08) !important;
+}
+
+/* Banner mosaic */
+.hero-banner {
+    background-image: url('../assets/bg-dashboard.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    color: #1e3c72;
+    box-shadow: 0 14px 35px rgba(92, 130, 176, 0.30);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.50) 0%,
+        rgba(255, 255, 255, 0.36) 34%,
+        rgba(176, 196, 222, 0.12) 60%,
+        rgba(120, 155, 200, 0.50) 100%
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-badge {
+    background: rgba(255, 255, 255, 0.88) !important;
+    color: #0d6efd !important;
+    box-shadow: 0 8px 18px rgba(13, 56, 94, 0.10);
+}
+
+.hero-title {
+    color: #173c76;
+}
+
+.hero-desc {
+    color: #2b4e83;
+}
+
+/* Matikan animasi tombol */
+button,
+button:hover,
+button:focus,
+button:active,
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+/* =========================
+   WALI KELAS COMPACT STYLE
+========================= */
+
+.wali-compact-banner {
+    background-image: url('../assets/bg-dashboard.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 22px;
+    min-height: 160px;
+    padding: 28px 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(80, 115, 155, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.wali-compact-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgba(225, 238, 252, 0.55) 45%,
+        rgba(151, 188, 230, 0.45) 100%
+    );
+    z-index: 1;
+}
+
+.wali-compact-content {
+    position: relative;
+    z-index: 2;
+}
+
+.wali-compact-title {
+    color: #173c76;
+    font-weight: 800;
+}
+
+.wali-compact-desc {
+    color: #244b70;
+    font-weight: 600;
+}
+
+.wali-badge {
+    background: rgba(255, 255, 255, 0.88) !important;
+    color: #0d6efd !important;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-weight: 700;
+    box-shadow: 0 6px 14px rgba(80, 115, 155, 0.12);
+}
+
+.wali-action-card {
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(80, 115, 155, 0.10);
+}
+
+.btn-wali-sm {
+    min-height: 38px;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 50px !important;
+}
+
+.btn-wali-table {
+    min-height: 31px;
+    min-width: 58px;
+    padding: 0 13px !important;
+    font-size: 12px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 50px !important;
+}
+
+.wali-status-pending {
+    background: #FFE3E8;
+    color: #842029;
+    border: 1px solid #F2A6B3;
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.wali-status-ready {
+    background: #DDF5EA;
+    color: #1f5f48;
+    border: 1px solid #9DDCC4;
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 700;
+}
