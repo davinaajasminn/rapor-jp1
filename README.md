@@ -46,12 +46,10 @@ Sistem memiliki empat peran dengan hak akses berbeda.
 1. Pasang [XAMPP](https://www.apachefriends.org/) lalu jalankan **Apache** dan **MySQL**.
 2. Salin folder proyek ini ke `C:\xampp\htdocs\rapor_jp1`.
 3. Buka `http://localhost/phpmyadmin`, buat database bernama `db_pengolahan_nilai`.
-4. Impor skema database ke dalamnya (lihat catatan di bawah).
+4. Impor file db_pengolahan_nilai.sql lewat tab Import di phpMyAdmin.
 5. Buka `http://localhost/rapor_jp1/` di browser.
 
 Konfigurasi koneksi database ada di `config/Database.php` (default XAMPP: host `localhost`, user `root`, tanpa kata sandi).
-
-> **Catatan:** berkas skema database (`.sql`) belum disertakan di repositori ini. Data siswa dan nilai asli juga sengaja tidak dipublikasikan demi menjaga privasi.
 
 ## Struktur Folder
 
